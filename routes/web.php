@@ -17,7 +17,7 @@ Route::middleware('auth')->group(function () {
         return view('dashboard');
     })->name('dashboard');
 
-    Route::resource('categories', CategoryController::class)->middleware();
+    Route::resource('categories', CategoryController::class)->middleware('is_admin');
 
 });
 
