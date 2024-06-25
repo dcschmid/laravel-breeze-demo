@@ -19,6 +19,7 @@ Route::middleware('auth')->group(function () {
     })->name('dashboard');
 
     Route::resource('categories', CategoryController::class)->middleware(IsAdminMiddleware::class);
+    Route::resource('posts', \App\Http\Controllers\PostController::class)->middleware(IsAdminMiddleware::class);
 });
 
 require __DIR__.'/auth.php';
